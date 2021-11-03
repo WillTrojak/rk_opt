@@ -3,3 +3,4 @@ rkopt.egg-info/*
 /build/*
 
 test.py
+dist/*

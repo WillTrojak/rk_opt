@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from math import exp
 import numpy as np
-from pyfr.polys import jacobi
 
-from rkopt.fourier.base import FourierBase
-from rkopt.poly import leg_mode_diff, legendreD
+from rkopt.spatial.base import SpatialBase
+from rkopt.poly import jacobi, leg_mode_diff, legendreD
 from rkopt.utils import organise
 
 
-class FourierAdvec(FourierBase):
+class SpatialAdvec(SpatialBase):
     def __init__(self, p, h, alpha, nk=401) -> None:
         super().__init__(p, h, nk)
 

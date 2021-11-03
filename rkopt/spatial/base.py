@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 
-import itertools
-import numpy as np
 from math import pi
+import numpy as np
 
 
-class FourierBase(object):
+class SpatialBase(object):
     def __init__(self, p, h, nk):
         self.p = p
         self.h = h

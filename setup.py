@@ -22,9 +22,9 @@ else:
 
 # Modules
 modules = [
-    'rkopt.fourier',
-    'rk.opt.optimiser',
-    'rkopt.scheme',
+    'rkopt.optimiser',
+    'rkopt.schemes',
+    'rkopt.spatial',
     'rkopt.temporal',
 ]
 
@@ -34,8 +34,7 @@ package_data = {
 
 # Hard dependencies
 install_requires = [
-    'pyfr >= 1.10',
-    'numpy >= 1.7'
+    'numpy >= 1.7',
 ]
 
 # Info
@@ -52,7 +51,7 @@ setup(name='rkopt',
       version=version,
 
       # Packages
-      packages=['rkopt'],
+      packages=['rkopt'] + modules,
       package_data=package_data,
       install_requires=install_requires,
 

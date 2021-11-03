@@ -3,7 +3,8 @@
 from math import factorial
 import numpy as np
 
-from rkopt.fourier.baseadvec import FourierAdvec
+
+from rkopt.spatial.baseadvec import SpatialAdvec
 from rkopt.optimiser.neldermead import nelder_mead
 from rkopt.schemes.bdf import get_bdf
 from rkopt.temporal.bdf import DualBDF
@@ -11,7 +12,7 @@ from rkopt._version import __version__
 
 
 def optimise(p, alpha, dt, m, s):
-    FR = FourierAdvec(p=p, h=1, alpha=alpha, nk=501)
+    FR = SpatialAdvec(p=p, h=1, alpha=alpha, nk=501)
     L = FR.eigen()
 
     B = get_bdf(2)
@@ -24,7 +25,6 @@ def optimise(p, alpha, dt, m, s):
     res = nelder_mead(fun=cost, x0=np.asarray(P0), bounds=bnds, tol=1e-5, epsilon=2)
 
     P_opt = np.concatenate(([1,1], np.asarray(res.x)))
-    print(P_opt)
 
     A, b = T.reconstruct_Ab(P_opt)
     dtau_max = T.dtau_max_P(P_opt, m=m)
