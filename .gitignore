@@ -1,0 +1,5 @@
+rkopt.egg-info/*
+*__pycache__*
+/build/*
+
+test.py

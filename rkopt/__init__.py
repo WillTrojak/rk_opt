@@ -2,7 +2,6 @@
 
 from math import factorial
 import numpy as np
-from scipy.optimize import minimize
 
 from rkopt.fourier.baseadvec import FourierAdvec
 from rkopt.optimiser.neldermead import nelder_mead
